@@ -1,8 +1,8 @@
 {
-  "name": "hws2",
+  "name": "homework-2sprint",
   "homepage": "https://golodok2019/homework-2sprint",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@emotion/react": "11.10.4",
     "@emotion/styled": "11.10.4",
