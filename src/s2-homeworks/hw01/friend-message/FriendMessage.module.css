@@ -1,0 +1,66 @@
+.friendMessage {
+    position: relative;
+    float: left;
+    margin: 30px 0 30px 130px;
+    width: 90vw;
+}
+
+.friendImageAndText {
+    max-width: 527px;
+    box-shadow: 0 1px 2px 0 rgba(29, 33, 38, 0.1),0 5px 20px 0 rgba(29, 33, 38, 0.03);
+    background: #F5F7FBFF;
+    padding: 8px 13px 8px 25px;
+    border-radius: 10px;
+    float: left;
+}
+
+.friendImageAndText img {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    left: -50px;
+}
+
+.friendText {
+    color: #000000FF;
+    font-family: Montserrat, sans-serif ;
+    letter-spacing: 0;
+    text-align: left;
+}
+
+.friendText:after {
+
+}
+
+.friendName {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    text-align: left;
+}
+
+.friendMessageText {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+.friendTime {
+    color: #000000FF;
+    font-family: Montserrat, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 12px;
+    letter-spacing: 0;
+    text-align: left;
+    position: absolute;
+    left: -38px;
+    top: 60px;
+    /*float: right;
+    margin-right: 11px;*/
+}
