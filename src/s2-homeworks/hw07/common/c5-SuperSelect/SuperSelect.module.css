@@ -1,7 +1,11 @@
 .select {
+    border: 1px solid #C2C2C2;
+    padding: 5px 70px 5px 10px;
+    background-color: #FFFFFF;
 }
 
 .select:focus {
+    outline: 1px solid #C2C2C2;
 }
 
 

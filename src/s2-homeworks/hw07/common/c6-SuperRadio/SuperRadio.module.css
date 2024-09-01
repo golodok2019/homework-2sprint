@@ -1,4 +1,5 @@
 .radio {
+    accent-color: black;
 }
 
 .radio::before {
@@ -6,10 +7,15 @@
 
 
 .radio:checked::before {
+
 }
 
 .label {
+
 }
 
 .options {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
 }
