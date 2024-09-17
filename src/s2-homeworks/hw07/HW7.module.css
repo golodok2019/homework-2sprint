@@ -1,5 +1,4 @@
 .container {
-    margin-left: 70px;
     display: flex;
     flex-direction: row;
     gap: 130px;
