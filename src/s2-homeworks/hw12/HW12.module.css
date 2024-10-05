@@ -1,16 +1,16 @@
 [data-theme='1'] {
-    --color: #000000;
-    --background: #FFFFFF;
+    --color: #000000 !important;
+    --background: #FFFFFF !important;
 }
 
 [data-theme='2'] {
-    --color: #000000;
-    --background: #DDEEFF;
+    --color: #000000 !important;
+    --background: #DDEEFF !important;
 }
 
 [data-theme='3'] {
-    --color: #FFFFFF;
-    --background: #212A34;
+    --color: #FFFFFF !important;
+    --background: #212A34 !important;
 }
 
 html {
@@ -19,5 +19,14 @@ html {
 }
 
 .select {
+    background-color: transparent;
+    border: 1px solid var(--color);
+    text-transform: capitalize;
+    border-radius: 3px;
+    color: var(--color);
+}
 
+.select option {
+    color: var(--color);
+    background-color: var(--background);
 }
