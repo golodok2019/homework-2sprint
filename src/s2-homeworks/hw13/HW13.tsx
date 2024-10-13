@@ -9,8 +9,8 @@ import error500 from './images/500.svg'
 import errorUnknown from './images/error.svg'
 
 /*
-* 1 - дописать функцию send
-* 2 - дизэйблить кнопки пока идёт запрос
+* 1 - дописать функцию send +
+* 2 - дизэйблить кнопки пока идёт запрос +
 * 3 - сделать стили в соответствии с дизайном
 * */
 
@@ -19,6 +19,8 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
+
+    const loadingText = '...loading'
 
     const send = (x?: boolean | null) => () => {
         const url =
@@ -29,19 +31,38 @@ const HW13 = () => {
         setCode('')
         setImage('')
         setText('')
-        setInfo('...loading')
+        setInfo(loadingText)
 
         axios
             .post(url, {success: x})
-            .then((res) => {
+            .then((_) => {
                 setCode('Код 200!')
                 setImage(success200)
-                // дописать
-
+                setText('...всё ок)')
+                setInfo('код 200 - обычно означает что скорее всего всё ок)')
             })
             .catch((e) => {
                 // дописать
-
+                switch (e.response.status) {
+                    case 500:
+                        setCode('Ошибка 500!')
+                        setImage(error500)
+                        setText('Эмитация ошибки на сервере')
+                        setInfo('Ошибка 500 - обычно означает что что-то сломалось на сервере, например база данных)')
+                        break
+                    case 400:
+                        setCode('Ошибка 400!')
+                        setImage(error400)
+                        setText('Ты не отправил success в body вообще!')
+                        setInfo('Ошибка 400 - обычно означает что скорее всего фронт отправил что-то не то на бэк!')
+                        break
+                    default:
+                        setCode('Error!')
+                        setImage(errorUnknown)
+                        setText(e.message)
+                        setInfo(e.name)
+                        break
+                }
             })
     }
 
@@ -55,8 +76,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                        // дописать
-
+                        disabled={info === loadingText}
                     >
                         Send true
                     </SuperButton>
@@ -64,8 +84,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
-                        // дописать
-
+                        disabled={info === loadingText}
                     >
                         Send false
                     </SuperButton>
@@ -73,8 +92,7 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
-                        // дописать
-
+                        disabled={info === loadingText}
                     >
                         Send undefined
                     </SuperButton>
@@ -82,8 +100,7 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
-                        // дописать
-
+                        disabled={info === loadingText}
                     >
                         Send null
                     </SuperButton>

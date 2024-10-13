@@ -11,6 +11,7 @@
 
 .disabled {
     background-color: rgba(0, 77, 153, 0.5);
+    color: #fffdfd;
 }
 
 .secondary {
